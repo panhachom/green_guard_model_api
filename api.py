@@ -6,7 +6,7 @@ from PIL import Image
 import numpy as np
 from torchvision import datasets, transforms
 from torchvision import models as torch_models
-from greenguard import PretrainedModel
+from resnet_18 import PretrainedModel
 
 app = Flask(__name__)
 # Define transforms for image preprocessing
@@ -20,7 +20,7 @@ transform = transforms.Compose([
 # Load your trained model
 model = PretrainedModel( num_classes=7)  
 
-model.load_state_dict(torch.load('model.pth'))
+model.load_state_dict(torch.load('resnet_18_model.pth'))
 model.eval()  # Set the model to evaluation mode
 
 
